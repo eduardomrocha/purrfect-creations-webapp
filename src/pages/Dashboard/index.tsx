@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import { StatsCard }from "../../components/StatsCard";
-import { OrdersTable } from "../../components/OrdersTable";
+import { OrdersTable, StatsCard } from "../../components";
 import { faDollarSign, faUserCircle, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { MetricsData } from "../../types/metrics"

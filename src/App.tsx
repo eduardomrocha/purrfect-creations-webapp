@@ -1,4 +1,4 @@
-import { Dashboard } from "./screens/Dashboard"
+import { Dashboard } from "./pages"
 
 function App() {
   return (
