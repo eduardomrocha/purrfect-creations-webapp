@@ -10,6 +10,7 @@ const defaultMetrics = {
   totalOrdersThisMonth: 0,
   totalOrdersInProgress: 0,
   revenue: 0,
+  expectedRevenue: 0,
   recentOrders: []
 }
 
@@ -21,6 +22,13 @@ export function Dashboard() {
       setMetrics(response.data);
     });
   }, [])
+
+  const expectedRevenue = new Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency: "GBP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  }).format(metrics.expectedRevenue)
 
   const revenue = new Intl.NumberFormat("en-GB", {
     style: "currency",
@@ -39,6 +47,7 @@ export function Dashboard() {
           <StatsCard title={"Orders this Month"} value={metrics.totalOrdersThisMonth} color={"#fb6340"} icon={faUserCircle}/>
           <StatsCard title={"Orders in Progress"} value={metrics.totalOrdersInProgress} color={"#ffd600"} icon={faArrowCircleRight}/>
           <StatsCard title={"Revenue"} value={revenue} color={"#11cdef"} icon={faDollarSign}/>
+          <StatsCard title={"Expected Revenue"} value={expectedRevenue} color={"#ffd650"} icon={faDollarSign}/>
         </Row>
         <Row className="m-4">
           <OrdersTable orders={metrics.recentOrders} caption="Last Orders" />
