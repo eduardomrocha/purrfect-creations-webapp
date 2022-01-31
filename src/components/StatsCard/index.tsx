@@ -18,12 +18,12 @@ export function StatsCard (props: IStatsCardProps) {
           <Card.Body>
             <Row>
               <Col>
-                <Card.Title className="text-uppercase text-muted mb-0">
-                  {title}
-                </Card.Title>
                 <span className="h2 font-weight-bold mb-0">
                   {value}
                 </span>
+                <Card.Title className="text-uppercase text-muted mb-0">
+                  {title}
+                </Card.Title>
               </Col>
               <Col className="col-auto">
                 <FontAwesomeIcon icon={icon} size="2x" color={color} />
